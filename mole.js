@@ -13,8 +13,8 @@ let winnerSound = new Audio ("win.mp3");
 window.onload = function () {
 
     showScenario();  
-
-    document.addEventListener('click', function startMusic() {
+   // Add an event listener to start the music when the user clicks anywhere
+        document.addEventListener('click', function startMusic() {
             // Start the background music
             let backgroundMusic = document.getElementById("backgroundMusic");
             backgroundMusic.play(); // Play the music
@@ -24,7 +24,7 @@ window.onload = function () {
 
             // Start the actual game logic here
             setGame();
-     // Show the initial scenario popup  
+        });
 };
 
 function showScenario() {
