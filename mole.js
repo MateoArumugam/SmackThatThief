@@ -10,26 +10,20 @@ let ouchSound = new Audio("ouch.mp3");  // Load the sound effect
 let whistleSound = new Audio("whistle.mp3");
 let winnerSound = new Audio ("win.mp3");
 
-
 window.onload = function () {
 
-    showScenario(); // Show the initial scenario popup
+    showScenario(); 
+     document.addEventListener('click', function startMusic() {
+            // Start the background music
+            let backgroundMusic = document.getElementById("backgroundMusic");
+            backgroundMusic.play(); // Play the music
 
-    // Get the background music audio element
-    let backgroundMusic = document.getElementById("backgroundMusic");
+            // Remove the event listener to prevent it from triggering multiple times
+            document.removeEventListener('click', startMusic);
 
-    // Play the background music automatically, catch error if blocked
-    backgroundMusic.play().catch(error => {
-        console.log("Autoplay blocked, showing play button");
-        // Create a play button to manually start the music if blocked
-        let playButton = document.createElement("button");
-        playButton.textContent = "Play Music";
-        playButton.onclick = function() {
-            backgroundMusic.play();
-            playButton.style.display = "none"; // Hide button after play
-        };
-        document.body.appendChild(playButton);  // Add the button to the page
-    });
+            // Start the actual game logic here
+            setGame();
+     // Show the initial scenario popup  
 };
 
 function showScenario() {
