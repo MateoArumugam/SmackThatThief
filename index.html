@@ -1,0 +1,70 @@
+<html>
+<head>
+ <meta charset="UTF-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smack The Thief</title>
+<link rel="stylesheet" href="mole.css" >
+<script src="mole.js"></script>
+</head>
+<body>
+    <!-- Background Music -->
+<audio id="backgroundMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio> 
+
+  
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+          <source src="background.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <img src="logo.png" alt="Logo" class="logo"> 
+            <h2 id="score" >0</h2>   
+          
+           <center> <div id="board"></div> </center>
+        </div>
+      </div>
+
+      <div id="gameOverPopup" class="popup">
+        <div class="popup-content">
+            <img src="girl.png" alt="Game Over Girl" class="popup-image">
+            <h2>Oh no! You hit the police. Now my shoes are GONE!</h2>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+
+    <div id="winPopup" class="popup">
+        <div class="popup-content">
+            <img src="girl.png" alt="Congratulations Girl" class="popup-image">
+            <h2>You stopped the thief. Thank you so much! My precious shoes are safe.</h2>
+            <p>Final Score: <span id="winningScore">0</span></p>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+    
+    <div id="scenarioPopup" class="popup">
+        <div class="popup-content">
+            <img src="girl.png" alt="I need Help!" class="popup-image">
+            <h2>Help Me!</h2>
+            <p>There's a thief trying to steal my precious diamond shoes. She's trying to break in through the cracks in the wall. Please help me protect them!</p>
+            <button onclick="showInstructions()">Next</button>
+        </div>
+    </div>
+    
+    <div id="instructionsPopup" class="popup">
+        <div class="popup-content">
+            <img src="girl.png" alt="Instructions" class="popup-image">
+            <h2>Catch that hooligan!</h2>
+            <p>Hit the thief <img src="mole.png" alt="Thief" style="width: 30px; height: 30px;"> to stop them. But beware! The police are trying to catch the thief too. Don't hit them <img src="plant.png" alt="Police" style="width: 30px; height: 30px;">! Or you'll loose. </p>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+    </div>
+    
+    
+
+
+</body>
+</html>

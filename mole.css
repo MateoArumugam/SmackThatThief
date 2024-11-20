@@ -1,0 +1,158 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-size: cover;
+}
+
+/* Logo */
+.logo {
+    max-height: 70px;
+}
+
+/* Background Video */
+.video-background {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+   
+}
+
+/* Board Styles */
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 90%; /* 90% of the viewport width */
+    max-width: 540px; /* Maximum width for larger screens */
+    height: auto;
+    aspect-ratio: 1; /* Maintain a square aspect ratio */
+    margin: 20px auto;
+    background: url('wall.jpg');
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+/* Tile Styles */
+#board div {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1; /* Ensure square tiles */
+    background-image: url("crack.png");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tile Image Styling */
+#board div img {
+    width: 60%;
+    height: auto;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Score Display */
+#score {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.popup-content {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.popup-image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 10%;
+}
+
+/* Button Styling */
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: hotpink;
+}
+
+/* Responsive Styles for Smaller Screens (Mobile) */
+@media (max-width: 768px) {
+    #board {
+        width: 90vw; /* Make board 90% of viewport width */
+        height: 90vw; /* Keep it square */
+    }
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+    #board {
+        width: 75vw; /* Make board 75% of viewport width */
+        height: 75vw; /* Keep it square */
+        max-width: 540px; /* Prevent exceeding the maximum width */
+        max-height: 75vw; /* Prevent the board from becoming too tall */
+    }
+}
+
+/* Ensure tiles are properly responsive on small devices */
+@media (max-width: 480px) {
+    #board {
+        width: 95vw;
+        height: 95vw; /* Make board larger for very small screens */
+    }
+}
