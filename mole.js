@@ -9,7 +9,12 @@ let moleTimer, plantTimer;
 let ouchSound = new Audio("ouch.mp3");  // Load the sound effect
 let whistleSound = new Audio("whistle.mp3");
 let winnerSound = new Audio ("win.mp3");
-   document.addEventListener('click', function startMusic() {
+  
+window.onload = function () {
+
+    showScenario();  
+
+    document.addEventListener('click', function startMusic() {
             // Start the background music
             let backgroundMusic = document.getElementById("backgroundMusic");
             backgroundMusic.play(); // Play the music
@@ -20,9 +25,6 @@ let winnerSound = new Audio ("win.mp3");
             // Start the actual game logic here
             setGame();
      // Show the initial scenario popup  
-window.onload = function () {
-
-    showScenario();  
 };
 
 function showScenario() {
