@@ -11,8 +11,7 @@ let whistleSound = new Audio("whistle.mp3");
 let winnerSound = new Audio ("win.mp3");
   
 window.onload = function () {
-
-    showScenario();  
+ 
    // Add an event listener to start the music when the user clicks anywhere
         document.addEventListener('click', function startMusic() {
             // Start the background music
@@ -23,7 +22,7 @@ window.onload = function () {
             document.removeEventListener('click', startMusic);
 
             // Start the actual game logic here
-            setGame();
+          showScenario();  
         });
 };
 
